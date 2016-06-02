@@ -1,0 +1,10 @@
+module MultistepLB {
+
+extern module CentralLB;
+initnode void lbinit(void);
+
+group [migratable] MultistepLB : CentralLB {
+  entry void MultistepLB(const CkLBOptions &);
+};
+
+};

@@ -1,0 +1,74 @@
+          ChaNGa - An adaptable N-body and gas dynamics code.
+                  (Charm N-body GrAvity solver)
+
+For documentation, see the web site:
+https://github.com/N-BodyShop/changa/wiki/ChaNGa
+
+For more help, subscribe to the list changa-users@u.washington.edu.
+
+Please cite the following papers when publishing results using ChaNGa:
+
+P. Jetley, F. Gioachin, C. Mendes, L. V. Kale, and T. R. Quinn. Massively
+parallel cosmological simulations with ChaNGa. In Proceedings of IEEE
+International Parallel and Distributed Processing Symposium 2008, 2008.
+
+P. Jetley, L. Wesolowski, F. Gioachin, L. V. Kale, and T. R. Quinn. Scaling
+hierarchical n-body simulations on gpu clusters. In Proceedings of the 2010
+ACM/IEEE International Conference for High Performance Computing, Networking,
+Storage and Analysis, SC ’10, Washington, DC, USA, 2010. IEEE Computer Society. 
+
+Menon, H., Wesolowski, L., Zheng, G., Jetley, P., Kale, L., Quinn, T.,
+Governato, F., 2015. Adaptive Techniques for Clustered N-Body Cosmological
+Simulations, Computational Astrophysics and Cosmology, 2, 1.
+
+To compile ChaNGa first compile Charm++ or get a precompiled version.  When
+building Charm++, there is a special target "ChaNGa" which will build all the
+necessary libraries.  Then to compile ChaNGa itself, run:
+
+./configure
+make (or gmake)
+
+The executable ChaNGa will be created together with the submit script charmrun
+(for most machines).  Configure takes the usual options and also the
+"--enable-cooling" option to specify cooling for gas simulations.
+
+To run the code:
+
+./charmrun +p <procs> ChaNGa <param.file> [ additional options ]
+
+This will work on many machines, and can either be run directly or be
+submitted through the local scheduler.  However, on some machines the
+application will need to be submitted manually.
+
+More information is available in the online wiki:
+https://github.com/N-BodyShop/changa/wiki
+
+Several test simulations are included in subdirectories:
+
+A small globular cluster simulation is included in teststep.  This
+simulation can give a quick sanity check that the gravity code is
+operating correctly.
+
+A small cosmological simulation is included in testcosmo.
+
+A small shock tube (gas only) simulation is included in testshock.
+
+A small gas collapse simulation is included in testcollapse.
+
+For simple performance benchmarking, arbitrary size simulations can be created
+using the tools in testdata.
+
+An example simulation that generates movie frames is included in movie.  See
+the director.README in that directory for movie-making options.
+
+ACKNOWLEDGMENTS
+================
+
+The development of ChaNGa was supported by a National Science
+Foundation ITR grant PHY-0205413 to the University of Washington, and
+NSF ITR grant NSF-0205611 to the University of Illinois.  Contributors
+to the program include Graeme Lufkin, Tom Quinn, Rok Roskar, Greg Stinson,
+Ben Keller, Isaac Backus, Filippo Gioachin, Sayantan Chakravorty, Amit Sharma,
+Pritish Jetley, Lukasz Wesolowski, Harshitha Menon, Gengbin Zheng,
+Phil Miller, Yanhua Sun, Abhishek Gupta, Aditya Devarakonda, Viraj Paropkari,
+Edgar Solomonik, Celso Mendes, Joachim Stadel, and James Wadsley.

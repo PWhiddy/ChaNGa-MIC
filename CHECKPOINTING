@@ -1,0 +1,17 @@
+Structure: 
+	   1. call CkStartCheckpoint() at intervals or when wall clock runs out.
+	   2. restart() entry will detect if we're really restarting or not
+	    by using a flag set in the Migration constructor for main and
+	    then call doSimulation() to continue.  If we are actually restarting
+	    then restart() will call initialForces() which then proceeds to
+	    doSimulation().
+	    
+	  
+
+Issues:
+Does Readonly data get automatically checkpointed? Yes!
+What about the proxies that are stored read-only?  They get automatically
+restored.
+
+All groups and node groups need to get migration constructors since they
+automatically get dumped.

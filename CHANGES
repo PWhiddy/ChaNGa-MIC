@@ -1,0 +1,150 @@
+What's new in ChaNGa 3.2 (Since 3.1)
+
+===============================================================================
+
+General changes:
+
+- Move to Charm version 6.7.1
+
+- Restart from "tipsy binary" files.
+
+- More flexible "dumpframe" movie making.
+
+- Complete handling of > 2 billion particles, including 64 bit iOrders in
+  the starlog file.
+
+Physics Changes:
+
+- Grackle cooling module.
+
+- Jeans length pressure floor.
+
+- Improved "beta cooling" for disks.
+
+Parallel performance changes:
+
+- More efficient smoothing cache.
+
+- Better scaling for tree build.
+
+- Better bookkeeping for multistep load balancing.
+
+===============================================================================
+
+What's new in ChaNGa 3.1 (Since 3.0)
+
+===============================================================================
+
+General changes:
+
+- Support for greater than 2 billion particles.
+
+- Support for NChilada file format. 
+
+Hardware support changes:
+
+- Remove support for CELL processor (Playstation).
+
+- AVX instruction support.
+
+Parallel performance changes:
+
+- SMP load balancing using the Charm++ Ck_Loop Library
+
+- More efficient parallel I/O using the Charm++ CkIO library.
+
+- Faster domain decomposition.
+
+- New load balancers
+  - Better multistep load bookkeeping
+  - HierarchicalLB for large core counts
+  - MultistepNodeLB_notopo for node-based load balancing. 
+
+===============================================================================
+
+What's new in ChaNGa 3.0 (Since 2.0)
+
+===============================================================================
+
+Physics Changes:
+
+- Gas Cooling: primordial hydrogen and helium, planetary disk cooling with
+  cooling time proportional to orbital time.
+
+- More efficient thermal energy equation solver.
+
+- Star formation and feedback
+
+- Timestepping fixes
+
+-------------------------------------------------------------------------------
+
+Hardware support changes:
+
+- SMP aware: cores on an SMP node share tree data
+
+- Use of 128 key type for deeper trees: enable with -DBIGKEYS
+
+-------------------------------------------------------------------------------
+
+Parallel Infrastructure Changes:
+
+- Improved parallel treebuild
+
+- Improved neighbor search algorithms
+
+- Improved spatially aware load balancers
+
+===============================================================================
+
+What's new in ChaNGa 2.0 (Since 1.0)
+
+===============================================================================
+
+Physics Changes:
+
+- Smooth Particle Hydrodynamics is now implemented.
+
+- Hexadecapole expansions for the gravity calculation.
+
+- Physical gravitational softening lengths for comoving simulations.
+
+- Gravitational timestepping option.
+
+- Non-cubical periodic boundary conditions.
+
+- Adiabatically grow particle masses for equilibrium initial conditions.
+
+-------------------------------------------------------------------------------
+
+Output Changes:
+
+- Output of movie files is available.
+
+- Realtime visualization via liveViz is implemented.
+
+- Output at specific redshifts or times.
+
+-------------------------------------------------------------------------------
+
+Hardware support changes:
+
+- Support for CUDA.
+
+- SSE2 implementation of force calculations.
+
+- Better detection of 64 bit integer type.
+
+-------------------------------------------------------------------------------
+
+Parallel Infrastructure Changes:
+
+- Multistep-aware load balancer.
+
+- Rewrite of inter node caching to use the Charm++ Cache framework.
+
+- Refactor of treewalking for easier support for new types of treewalks.
+
+- Checkpointing using the Charm run time system.
+
+- Overlapping treewalks.
